@@ -21,7 +21,7 @@ class BookingController extends Controller
 
         // Booking::withTrashed()->get()->dd(); //soft delete
 
-        $bookings = Booking::paginate(2);
+        $bookings = Booking::with(['room.roomType', 'users:name'])->paginate(2);
         return view('bookings.index')
             ->with('bookings', $bookings);
     }
