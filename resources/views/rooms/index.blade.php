@@ -6,6 +6,7 @@
             <tr>
                 <th>Room Num</th>
                 <th>Type</th>
+                <th>Type Name</th>
             </tr>
         </thead>
         <tbody>
@@ -13,6 +14,7 @@
                 <tr>
                     <td>{{ $room->number }}</td>
                     <td>{{ $room->room_type_id }}</td>
+                    <td>{{ $room->roomType->name }}</td>
                 </tr>
             @endforeach
         </tbody>
