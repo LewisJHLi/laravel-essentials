@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Booking extends Model
 {
     use SoftDeletes;
-    
+
     protected $fillable = [
         'room_id',
         'start',
@@ -17,4 +17,14 @@ class Booking extends Model
         'is_paid',
         'notes',
     ];
+
+    public function room()
+    {
+        return $this->belongsTo('App\Room');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'bookings_users', 'booking_id', 'user_id')->withTimestamps();
+    }
 }
