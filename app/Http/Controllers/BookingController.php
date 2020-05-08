@@ -16,7 +16,10 @@ class BookingController extends Controller
     public function index()
     {
         // \DB::table('bookings')->get()->dd(); // laravel dump and die
-        $bookings = DB::table('bookings')->get();
+        
+        // $bookings = DB::table('bookings')->get();
+
+        $bookings = Booking::paginate(2);
         return view('bookings.index')
             ->with('bookings', $bookings);
     }
@@ -33,7 +36,8 @@ class BookingController extends Controller
 
         return view('bookings.create')
             ->with('users', $users)
-            ->with('rooms', $rooms);
+            ->with('rooms', $rooms)
+            ->with('booking', (new Booking()));
     }
 
     /**
