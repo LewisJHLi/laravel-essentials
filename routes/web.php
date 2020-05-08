@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', function(){ return 'Good bye'; });
+
+Route::get('/rooms', 'ShowRoomsController');
