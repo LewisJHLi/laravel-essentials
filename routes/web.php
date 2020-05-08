@@ -21,7 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', function(){ return 'Good bye'; });
 
-Route::get('/rooms', 'ShowRoomsController');
+// Route::get('/rooms', 'ShowRoomsController');
+Route::get('/rooms/{roomType?}', 'ShowRoomsController');
 
 // Route::get('/bookings', 'BookingController@index');
 // Route::get('/bookings/create', 'BookingController@create');
