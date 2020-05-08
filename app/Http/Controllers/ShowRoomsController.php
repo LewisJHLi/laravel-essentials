@@ -25,12 +25,14 @@ class ShowRoomsController extends Controller
         // }
         // return response()->json($rooms);
 
-        if(isset($roomType)){
-            $rooms = Room::where('room_type_id', $roomType)->get();
-        }
-        else {
-            $rooms = Room::get();
-        }
+        // if(isset($roomType)){
+        //     $rooms = Room::where('room_type_id', $roomType)->get();
+        // }
+        // else {
+        //     $rooms = Room::get();
+        // }
+
+        $rooms = Room::byType($roomType)->get();
         return view('rooms.index', ['rooms' => $rooms]);
     }
 }
