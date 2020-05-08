@@ -21,7 +21,7 @@
     <dd class="col-sm-9">{{ $booking->is_paid ? 'Yes' : 'No' }}</dd>
 
     <dt class="col-sm-3">Notes</dt>
-    <dd class="col-sm-9">{{ $booking->room_id }}</dd>
+    <dd class="col-sm-9">{{ $booking->Notes }}</dd>
 
     <dt class="col-sm-3">Created</dt>
     <dd class="col-sm-9">{{ date('F d, Y', strtotime($booking->created_at)) }}</dd>
